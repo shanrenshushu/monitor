@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Window >
+	<Font name="宋体" size="15" bold="false" italic="false" default="true" />
+	<Font name="宋体" size="30" bold="false" italic="false" />
+	<TabLayout name="tab" width="500"><!--右边部分-->
+		
+			<VerticalLayout> <!--A-->
+				<VerticalLayout padding="10,10,10,10" height="280"  bordersize="1" bordercolor="0xFF9999AA" borderround="5,5">
+					<HorizontalLayout height="35" padding="10,10">
+						<Control width="10" />
+						<HorizontalLayout  height="35">
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="产线名称:" align="right"/>
+										<Control width="10"/>
+										<Edit name="edit_linename_a" tooltip="产线名" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="在产型号:" align="right"/>
+										<Control width="10"/>
+										<Edit name="edit_model_a" tooltip="型号" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+						</HorizontalLayout>
+						<Control width="10" />
+					</HorizontalLayout>
+
+					<HorizontalLayout height="35" padding="10,10">
+						<Control width="10" />
+						<HorizontalLayout  height="35">
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="产线人数:" align="right"/>
+										<Control width="10"/>
+										<Edit name="edit_numberofpeople_a" width="60" text="" tooltip="产线人数" numberonly="true" align="right"/>
+										<Label width="15" text="人" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="计划产量:" align="right"/>
+										<Control width="10"/>
+										<Edit name="edit_plan_a" tooltip="计划产量" width="60" numberonly="true" align="right"/>
+										<Label width="15" text="台" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+						</HorizontalLayout>
+						<Control width="10" />
+					</HorizontalLayout>
+
+					<HorizontalLayout height="35" padding="10,10">
+						<Control width="10" />
+						<HorizontalLayout  height="35">
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="标准节拍:" align="right"/>
+										<Control width="10"/>
+										<Edit name="edit_standbeat_a" tooltip="标准节拍" width="60" numberonly="true" align="right"/>
+										<Label width="15" text="s" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="实际节拍:" align="right"/>
+										<Control width="10"/>
+										<Label width="60" name="lab_actbeat_a"     text="120" tooltip="实际节拍" align="right"/>
+										<Label width="15" text="s" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+						</HorizontalLayout>
+						<Control width="10" />
+					</HorizontalLayout>
+
+					<HorizontalLayout height="35" padding="10,10">
+						<Control width="10" />
+						<HorizontalLayout  height="35">
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="达成率:" align="right"/>
+										<Control width="10"/>
+										<Label width="60" name="lab_reachrate_a"  text="100" tooltip="达成率" align="right"/>
+										<Label width="15" text="%" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+							<HorizontalLayout height="35">
+								<HorizontalLayout inset="2,2,2,2" bordersize="1" bordercolor="0xFF98a4b4">
+									<HorizontalLayout>
+										<Control width="10"/>
+										<Label height="30" width="80" text="不良率:" align="right"/>
+										<Control width="10"/>
+										<Label   width="60" name="lab_rejectionrate_a" text="120" tooltip="不良率" align="right"/>
+										<Label width="15" text="%" align="center"/>
+									</HorizontalLayout>
+								</HorizontalLayout>
+							</HorizontalLayout>
+							<Control width="10" />
+						</HorizontalLayout>
+						<Control width="10" />
+					</HorizontalLayout>
+
+					<HorizontalLayout height="35" padding="30,10,30,10" bkcolor="0xFFEEEEEE">
+						<Label name="lab_worktime_a" font="1" text="10:10" align="center" />
+					</HorizontalLayout>
+					
+					<HorizontalLayout height="20" padding="30,10,30,10" bkcolor="0xFFe02222" borderround="5,5" >
+						<Button name="btn_change_a" textcolor="0xFFFFFFFF" text="修  改"/>
+						<Control width="20" bkcolor="0xFFFFFFFF"/>
+						<Button name="btn_cleartime_a" textcolor="0xFFFFFFFF" text="重新计时"/>
+					</HorizontalLayout>
+				</VerticalLayout>
+
+
+
+				<HorizontalLayout padding="10,10,10,10"               bordersize="1" bordercolor="0xFF9999AA" borderround="5,5">
+					<HorizontalLayout padding="10,10,10,10">	
+						<Control width="10"/>
+						<HorizontalLayout>
+							<Control width="10" />
+							<Label width="90" text="实际产量:" textpadding="20,0,0,0" bkcolor="0xFFEEEEEE"/>
+							<Label name="lab_actual" text="" align="center" bkcolor="0xFFEEEEEE"/>
+							<Control width="10" />
+							<Edit name="edit_actual" bkcolor="0xFFEEEEEE" width="50"/>
+							<Button name="btn_changeact_a" text="修改实际" padding="10" textcolor="0xFFFFFFFF" bkcolor="0xFFe02222" borderround="5,5"/>
+						</HorizontalLayout>
+						<Control width="10"/>
+					</HorizontalLayout>
+				</HorizontalLayout>
+			</VerticalLayout>		
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+			<VerticalLayout> <!--B-->
+			</VerticalLayout>
+		
+			<VerticalLayout> <!--C-->
+			</VerticalLayout>
+		 
+			<VerticalLayout>   <!--D-->
+			</VerticalLayout>
+		
+			<VerticalLayout>   <!--E-->
+			</VerticalLayout>
+	</TabLayout>
+</Window>

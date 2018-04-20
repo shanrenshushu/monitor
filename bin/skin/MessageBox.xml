@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="310,165"  minsize="310,160" roundcorner="5,5"> 
+  <Font name="微软雅黑" size="14" default="true"/>
+  <Font name="微软雅黑" size="13" default="true"/>
+  <VerticalLayout  name="topVert" bkcolor="#0xFFe91b23">
+      <HorizontalLayout name="background" height="31" >
+          <Label name="caption" text="提示" textcolor="#FFFFFFFF" textpadding="7,0,0,0" font="0" autocalcwidth="false" width="200"/>
+          <Control />
+          <Button name="close" float="true" pos="-20, 10, -10, 20" padding="0,6,0,0" normalimage=" file='ResMain\sys_close.png'" />                     
+      </HorizontalLayout>
+	  <VerticalLayout bkcolor="#FFFFFFEF" padding="7, 0, 7, 5" > 
+	      <HorizontalLayout name="background" padding="20,10,20,0">
+			<Label name="IconImg" float="false" padding="0,0,0,0" width="32" height="32" bkimage="file='ResMain\tan.png'"  />
+			<RichEdit name="richedit" text="这里显示会计分录卡萨丁就废了；都是发动机上课了房间收到了反击"  float="false" padding="10,0,0,0" width="200" align="center" multiline="true" readonly="true" font="1" />
+		  </HorizontalLayout>
+          <HorizontalLayout height="30" childpadding="10" >
+			<Label align="left" />
+          	<Button name="leftbtn" width="80" height="30" text="否" font="0" textcolor="#FFFFFFEF" bkcolor="#0xFFd91b23" hotbkcolor="#0xFFe91b23" pushedbkcolor="#0xFFd01b23" />
+			<Button name="rightbtn" width="80" height="30" text="是" font="0" textcolor="#FFFFFFEF" bkcolor="#0xFFd91b23" hotbkcolor="#0xFFe91b23" pushedbkcolor="#0xFFd01b23"/>
+			<Label align="right" />
+          </HorizontalLayout >     
+      </VerticalLayout >   
+  </VerticalLayout>
+</Window>
+
+ 

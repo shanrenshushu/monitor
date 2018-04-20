@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window>
+    <ListContainerElement height="45" focusbordercolor="#FF0000FF" >
+		<HorizontalLayout name="" height="50" tooltip="" float="false" bkcolor="#FFFFFAFA" childpadding="0" inset="1,1,1,1">
+			<Label name="light"  bkimage="green.png" width="40" height="40" showhtml="true"></Label>
+			<Control width="10" />
+			<Label name="name"  text="***" width="150" font="11" ></Label>
+			<Label name="X" text="--" font="11"></Label>
+			<Label name="Z" text="--" font="11"></Label>
+			<Label name="T" text="--" font="11"></Label>
+			<Control width="200" />
+			<Button name="currentBtn" text="实时" font="11"  width="80" height="32" bkcolor="0xFFFF0000" textcolor="0xFF000000" pushedtextcolor="0xFF000000" hottextcolor="0xFFFFFFFF" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF"/>
+			<Button name="previousBtn" text="历史" font="11" width="80" height="32" bkcolor="0xFF00FF00" textcolor="0xFF000000" pushedtextcolor="0xFF000000" hottextcolor="0xFFFFFFFF" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF"/>
+			<Button name="SettingBtn" text="设置" font="11"  width="80" height="32" bkcolor="0xFF0000FF" textcolor="0xFF000000" pushedtextcolor="0xFF000000" hottextcolor="0xFFFFFFFF" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF"/>
+		</HorizontalLayout>
+	</ListContainerElement>
+</Window>

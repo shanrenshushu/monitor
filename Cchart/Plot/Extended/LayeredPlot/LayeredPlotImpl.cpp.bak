@@ -1,0 +1,124 @@
+/*============================================================================*/
+/*                                                                            */
+/*                            C O P Y R I G H T                               */
+/*                                                                            */
+/*                          (C) Copyright 2011 by                             */
+/*                              Yang Guojun                                   */
+/*                           All Rights Reserved                              */
+/*                                                                            */
+/*      The author assumes no responsibility for the use or reliability of    */
+/*      his software.                                                         */
+/*                                                                            */
+/*============================================================================*/
+
+/* ############################################################################################################################## */
+
+//#include "StdAfx.h"
+#include "LayeredPlotImpl.h"
+#include "../../Basics/PlotUtility.h"
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//
+
+CLayeredPlotImpl::CLayeredPlotImpl()
+{
+}
+
+CLayeredPlotImpl::~CLayeredPlotImpl()
+{
+	ClearLayers();
+}
+
+void	CLayeredPlotImpl::ClearLayers(int nIndex)
+{
+	if(nIndex < 0 || nIndex >= GetNumOfLayers() )return;
+	if(m_vpLayers[nIndex])delete m_vpLayers[nIndex];
+	m_vpLayers.erase(m_vpLayers.begin()+nIndex);
+}
+
+void	CLayeredPlotImpl::ClearLayers()
+{
+	for(int i=m_vpLayers.size()-1; i>=0; i--)
+	{
+		if(m_vpLayers[i])delete m_vpLayers[i];
+		m_vpLayers.pop_back();
+	}
+}
+
+SIZE	CLayeredPlotImpl::GetTitleSize( HDC hDC )
+{
+	SIZE size={0,0};
+	
+	string strTitle=GetTitle();
+	if( strTitle != "" )
+	{
+		HFONT		hOldFont, hFont;
+		hFont = CreateFontIndirect(&GetTitleFont());
+		hOldFont = (HFONT)SelectObject(hDC, hFont);
+		//size = pDC->GetTextExtent( strTitle );
+		GetTextExtentPoint( hDC, strTitle.c_str(), strTitle.length(), &size);
+		SelectObject( hDC, hOldFont );
+		DeleteObject(hFont);
+	}
+	
+	return size;
+}
+
+RECT	CLayeredPlotImpl::GetPlotRect( HDC hDC, RECT clientRect)
+{
+	//////////////////////////////////////////////////////////////
+	// Get Plot Rect
+	int i;
+	
+	RECT plotRect=clientRect;
+	SIZE sizeRect={0,0},sizeTmp={0,0};
+	
+	// First title
+	sizeRect=GetTitleSize(hDC);
+	plotRect.top+=sizeRect.cy;
+	
+	// then top axis
+	sizeRect.cx = sizeRect.cy = 0;
+	for(i=0;i<(int)m_vpLayers.size();i++)
+	{
+		if(!((CPlotLayerImplI *)m_vpLayers[i])->NeedDrawing())continue;
+		sizeTmp=((CPlotLayerImplI *)m_vpLayers[i])->GetAxisSize( hDC, kLocationTop );
+		sizeRect.cy+=sizeTmp.cy;
+	}
+	plotRect.top+=sizeRect.cy;
+	
+	// then bottom axis
+	sizeRect.cx = sizeRect.cy = 0;
+	for(i=0;i<(int)m_vpLayers.size();i++)
+	{
+		if(!((CPlotLayerImplI *)m_vpLayers[i])->NeedDrawing())continue;
+		sizeTmp=((CPlotLayerImplI *)m_vpLayers[i])->GetAxisSize( hDC, kLocationBottom );
+		sizeRect.cy+=sizeTmp.cy;
+	}
+	plotRect.bottom-=sizeRect.cy;
+	
+	// then left axis
+	sizeRect.cx = sizeRect.cy = 0;
+	for(i=0;i<(int)m_vpLayers.size();i++)
+	{
+		if(!((CPlotLayerImplI *)m_vpLayers[i])->NeedDrawing())continue;
+		sizeTmp=((CPlotLayerImplI *)m_vpLayers[i])->GetAxisSize( hDC, kLocationLeft );
+		sizeRect.cx+=sizeTmp.cx;
+	}
+	plotRect.left+=sizeRect.cx;
+	
+	// then right axis
+	sizeRect.cx = sizeRect.cy = 0;
+	for(i=0;i<(int)m_vpLayers.size();i++)
+	{
+		if(!((CPlotLayerImplI *)m_vpLayers[i])->NeedDrawing())continue;
+		sizeTmp=((CPlotLayerImplI *)m_vpLayers[i])->GetAxisSize( hDC, kLocationRight );
+		sizeRect.cx+=sizeTmp.cx;
+	}
+	plotRect.right-=sizeRect.cx;
+	
+	// Add spacing
+	InflateRect( &plotRect, -10, -10 );
+	
+	return plotRect;
+}

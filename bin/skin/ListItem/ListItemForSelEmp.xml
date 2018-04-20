@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Window>  
+<ListContainerElement height="22">
+	<HorizontalLayout>
+		<Label name="jobnum" text="102102102"   align="center"/>
+		<Label name="name" text="张三"        align="center"/>
+		<Label name="phone" text="18217773990" align="center"/>
+		<CheckBox name="checkbox" width="25" normalimage=" file='images\uncheck.png' dest='5,4,20,19'" selectedimage=" file='images\check.png' dest='5,4,20,19'" padding="15,0,0,0"/>	
+	</HorizontalLayout>
+</ListContainerElement>
+</Window>

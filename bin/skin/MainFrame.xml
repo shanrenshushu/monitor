@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"  ?>
+<Window size="1024,768" mininfo="800,632" caption="0,0,0,32" sizebox="4,4,4,4" roundcorner="2,2">
+	<Font name="微软雅黑" size="14" bold="false" italic="false" />
+	<Font name="微软雅黑" size="16" bold="false" italic="false" />
+	<Font name="微软雅黑" size="18" bold="false" italic="false" />
+	<Font name="微软雅黑" size="20" bold="false" italic="false" />
+	<Font name="微软雅黑" size="22" bold="true" italic="false" />
+	<Font name="微软雅黑" size="24" bold="false" italic="false" />
+	<Font name="微软雅黑" size="26" bold="false" italic="false" />
+	<Font name="微软雅黑" size="24" bold="false" italic="false" />
+	<Font name="微软雅黑" size="26" bold="false" italic="false" />
+	<Font name="微软雅黑" size="24" bold="false" italic="false" />
+	<Font name="微软雅黑" size="26" bold="false" italic="false" />
+	<Font name="宋体" size="14" bold="false" italic="false" />
+	<Font name="宋体" size="14" bold="true" italic="false" />
+	<Font name="宋体" size="16" bold="false" italic="false" />
+	<Font name="宋体" size="16" bold="true" italic="false" />
+	<Font name="宋体" size="18" bold="false" italic="false" />
+	<Font name="宋体" size="20" bold="true" italic="false" />
+	<Font name="宋体" size="22" bold="true" italic="false" />
+	<Font name="宋体" size="24" bold="true" italic="false" />
+	<Font name="宋体" size="26" bold="true" italic="false" />
+	<Font name="宋体" size="28" bold="true" italic="false" />
+	<Font name="宋体" size="30" bold="true" italic="false" />
+	<Font name="隶书"     size="40" italic="true"/>
+	<!-- 整个窗口的背景色 -->
+	<VerticalLayout bordercolor="#FF778899" bordersize="1" bkcolor="#FF000000" >
+		<!-- 标题栏区 -->
+		<HorizontalLayout height="64" bkcolor="#FF1673DD" >
+		  <Control width="10" />
+		  <VerticalLayout  width="250" >
+		   <Control height="12" />
+		   <Label name="title" text="实时监控系统" font="22"  height="32" />
+		  </VerticalLayout>
+		  <Button name="return" font="1" text="主页" textpadding="0,40,0,0" textcolor="0xFFFFFFFF" hottextcolor="0xFFFF0000" height="60" width="48" hotbkcolor="0xFF5DC1FC" selectedbkcolor="#FF5DC1FC" normalimage=" file='sys_mainframe.png' dest='0,0,64,48'" hotimage=" file='sys_mainframe.png' dest='0,0,64,48'" pushedimage=" file='sys_mainframe.png' dest='0,0,64,48'" selectedimage=" file='sys_mainframe.png' dest='0,0,64,48'"/>
+		  <Control width="30" />
+		  <Button name="add" font="0" text="添加设备"   textpadding="0,40,0,0" textcolor="0xFFFFFFFF" hottextcolor="0xFFFF0000" height="60" width="60" hotbkcolor="0xFF5DC1FC" selectedbkcolor="#FF5DC1FC" normalimage=" file='sys_query.png' dest='6,0,54,48'" hotimage=" file='sys_query.png' dest='6,0,54,48'" pushedimage=" file='sys_query.png' dest='6,0,54,48'" selectedimage=" file='sys_query.png' dest='6,0,54,48'"/>
+		  <Control />
+		  <HorizontalLayout width="90">
+			<!-- 右边三个控件所占的宽度-->
+			<Button name="minbtn"   tooltip="最小化" width="30" height="27" normalimage=" file='SysBtn\MinNormal.png' " hotimage=" file='SysBtn\MinFocus.png' " pushedimage=" file='SysBtn\MinDown.png' "/>
+			<Button name="maxbtn"  visible="false" tooltip="最大化" width="30"  height="27" normalimage=" file='SysBtn\MaxNormal.png' " hotimage=" file='SysBtn\MaxFocus.png' " pushedimage=" file='SysBtn\MaxDown.png' " />
+			<Button name="restorebtn" visible="true" tooltip="还原" width="30" height="27" normalimage=" file='SysBtn\StoreNormal.png' " hotimage=" file='SysBtn\StoreFocus.png' " pushedimage=" file='SysBtn\StoreDown.png' " />
+			<Button name="closebtn" tooltip="关闭" width="30" height="27" normalimage=" file='SysBtn\CloseNormal.png' " hotimage=" file='SysBtn\CloseFocus.png' " pushedimage=" file='SysBtn\CloseDown.png' "/>
+		  </HorizontalLayout>
+		</HorizontalLayout>
+
+		<!-- 客户区 -->
+		<TabLayout name="client">
+			<HorizontalLayout  visible="true" padding="1,0,1,1"  bkcolor="#FFFFFFFF">
+			  <VerticalLayout onlydrawchild="true">
+				<HorizontalLayout height="32" name="timecontainer">
+					<Control />
+					<Label text="选择查询时间范围:" width="100"/>
+					<Control width="10"/>
+					<DateTime name="starttime" width="120" textpadding="5,0,0,0" bordersize="1" bordercolor="0xFF9CD6FF"/>
+					<Label text="~" width="20" align="center"/>
+					<DateTime name="endtime" width="120" textpadding="5,0,0,0" bordersize="1" bordercolor="0xFF9CD6FF"/>
+					<Control width="10"/>
+					<Button name="search" text="查 询" font="13" width="80" bkcolor="0xFF0000FF" textcolor="0xFF000000" pushedtextcolor="0xFF000000" hottextcolor="0xFFFFFFFF" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF"/>
+					<Control />
+				</HorizontalLayout>
+				<Wnd name="wnd1" float="false" bkcolor="#FF000000" />
+				<Wnd name="wnd2" float="false"  bkcolor="#FF000000"/>
+				<Wnd name="wnd3" float="false"  bkcolor="#FF000000"/>
+			  </VerticalLayout>
+			 
+			</HorizontalLayout>
+			
+			<List name="ListView" text="" childpadding="1" vscrollbar="true" hscrollbar="true" tooltip="" float="false" bordersize="1" bkcolor="#FFE0F0FE" bordercolor="#FF1B4876" itemselectedbkcolor="#FF00FF00" itemhotbkcolor="#FFFF0000" header="hidden" inset="2,1,2,2" bkimage="file='downlist_bk.png' ytiled='true'">
+			</List>
+		</TabLayout>
+	</VerticalLayout>
+</Window>
+

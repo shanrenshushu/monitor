@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window size="400,300" >
+<Include source="scrollbar.xml" />	
+<VerticalLayout bkcolor="0xFFBAD9EB" bkcolor2="0xFFFFFFFF" bkcolor3="0xFFBAD9EB">
+	<HorizontalLayout height="20" bkcolor="0xFFBAD9EB" bkcolor2="0xFF50509f" bkcolor3="0xFFBAD9EB" > <!--系统按钮-->  
+		<Label width="200" text="删除人员" bkimage=" file='images\codeblocks.png' dest='4,3,20,19'" textpadding="22,0,0,0"/>
+		<Control />
+		<Button name="closebtn" tooltip="关闭" borderround="2,2" width="24" height="20"  normalimage=" file='images\sysbtn\close2.png' source='0,0,24,20'" hotimage=" file='images\sysbtn\close2.png' source='25,0,49,20' " pushedimage=" file='images\sysbtn\close2.png' source='25,0,49,20' " />
+	</HorizontalLayout>
+
+	<VerticalLayout>
+		
+		<HorizontalLayout>
+			<List  name="setting_meter_list" padding="0,1,0,5" font="0" bkcolor="0xFFFFFFFF"  itemalign="center" vscrollbar="true" scrollselect="true" itemselectedbkcolor="0xFFE29292" itemlinecolor="0xFFe3e0d5" borderround="3,3" bordersize="1" bordercolor="0xFFE0E0E0">
+				<ListHeader font="0" height="20" bkcolor="0xFF9CD6FF" bordersize="0" bordercolor="0xFFe3e0d5" sepimm="true">
+					<ListHeaderItem font="3" text="串口编号"       width="90"  dragable="false"  sepwidth="1" sepimage="skin\images\sepline.png"/>
+					<ListHeaderItem font="3" text="串口描述"       width=""    dragable="false"  sepwidth="1" sepimage="skin\images\sepline.png"/>
+					<ListHeaderItem font="3" text="选    择"       width="90" />
+				</ListHeader>
+				
+			</List>			
+		</HorizontalLayout>
+		
+		<HorizontalLayout  height="30" >
+			<Control />
+			<Button name="btn_del" text="删       除" width="685" height="22" align="center" bkcolor="0xFFEE8080" focusedtextcolor="0xFFFFFFFF" borderround="2,2" textcolor="0xFFFFFFFF" hottextcolor="0xFFA10000" padding="0,5"/>
+			<Control />
+		</HorizontalLayout>
+
+		<Control height="5" />
+
+	</VerticalLayout>
+</VerticalLayout>
+</Window>

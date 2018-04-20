@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window size="300,200" >
+<Include source="scrollbar.xml" />	
+<VerticalLayout bkcolor="0xFFBAD9EB" bkcolor2="0xFFFFFFFF" bkcolor3="0xFFBAD9EB">
+	<HorizontalLayout height="20" bkcolor="0xFFBAD9EB" bkcolor2="0xFF50509f" bkcolor3="0xFFBAD9EB" > <!--系统按钮-->  
+		<Label width="200" text="添加串口" bkimage=" file='images\codeblocks.png' dest='4,3,20,19'" textpadding="22,0,0,0"/>
+		<Control />
+		<Button name="closebtn" tooltip="关闭" borderround="2,2" width="24" height="20"  normalimage=" file='images\sysbtn\close2.png' source='0,0,24,20'" hotimage=" file='images\sysbtn\close2.png' source='25,0,49,20' " pushedimage=" file='images\sysbtn\close2.png' source='25,0,49,20' " />
+	</HorizontalLayout>
+
+	<VerticalLayout>
+
+		<Control />
+		<HorizontalLayout height="22">
+			<Control />
+			<Label text="选择串口" width="80" font="1" bkimage=" file='images\comm\stock_mail-filters-apply.png' dest='0,2,16,18'" textpadding="16,0,0,0" textcolor="0xFF606060"/>
+			<Combo    name="comb_select_com" width="120" height="20"    bkimage=" file='images/Combo/FontsizeComboBk120.png'" itemalign="center" >
+			</Combo>
+			<Control />		
+		</HorizontalLayout>
+
+
+		<Control height="15" />
+		<HorizontalLayout height="22">
+			<Control />
+			<Label text="串口描述" width="80" font="1" bkimage=" file='images\comm\stock_mail-filters-apply.png' dest='0,2,16,18'" textpadding="16,0,0,0" textcolor="0xFF606060"/>
+			<Edit name="edt_com_desc" width="120"  bordercolor="0xFF00A3EB" bordersize="1" maxchar="20"  align="center"/>
+			<Control />		
+		</HorizontalLayout>
+
+		
+		<Control />
+		
+		<HorizontalLayout height="22">
+			<Control />
+			<Button name="btn_add" text="添       加" align="center" width="200" bkcolor="0xFFEE8080" focusedtextcolor="0xFFFFFFFF" borderround="2,2" textcolor="0xFFFFFFFF" hottextcolor="0xFFA10000"/>
+			<Control />
+		</HorizontalLayout>
+		<Control />
+	</VerticalLayout>
+</VerticalLayout>
+</Window>

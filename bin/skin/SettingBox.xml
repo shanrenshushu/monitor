@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="600,400"  minsize="310,160" roundcorner="5,5"> 
+  <Font name="微软雅黑" size="14" default="true"/>
+  <Font name="微软雅黑" size="18" default="true"/>
+  <VerticalLayout  name="topVert" bkcolor="#FFE0F0FE" bordercolor="#FF778899" bordersize="1" >
+      <HorizontalLayout  height="32" bkcolor="#FF1673DD" >
+          <Label name="caption" text="设置" textcolor="#FFFFFFFF" textpadding="7,0,0,0" font="0" width="200"/>
+          <Control />
+          <Button name="close" width="30" height="27" normalimage=" file='SysBtn\CloseNormal.png' " hotimage=" file='SysBtn\CloseFocus.png' " pushedimage=" file='SysBtn\CloseDown.png' "/>              
+      </HorizontalLayout>
+	  <Control height="30"/>
+	  <HorizontalLayout >
+		<Control  />
+		<VerticalLayout width="330" padding="-100,0,0,0" childpadding="5">
+			<HorizontalLayout  height="30"  >
+				<Label text="串口号：" align="right" font="1" />
+				<Combo name="com" width="160" endellipsis="true" bordersize="1"  bordercolor="#FFB5B5B5"  itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" normalimage="Combo_nor_purchase.png" hotimage="Combo_nor_purchase.png" pushedimage="Combo_nor_purchase.png" dropboxsize="160,300">
+                <ListLabelElement text="com1" selected="true" font="0" />
+				<ListLabelElement text="com2" />
+				<ListLabelElement text="com3" />
+				<ListLabelElement text="com4" />
+				<ListLabelElement text="com5" />
+				<ListLabelElement text="com6" />
+				<ListLabelElement text="com7" />
+				<ListLabelElement text="com8" />
+				<ListLabelElement text="com9" />
+				</Combo>
+			</HorizontalLayout>
+			<HorizontalLayout  height="30"  >
+				<Label text="波特率：" align="right" font="1" />
+				<Combo name="baud" width="160" endellipsis="true" bordersize="1"  bordercolor="#FFB5B5B5"  itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" normalimage="Combo_nor_purchase.png" hotimage="Combo_nor_purchase.png" pushedimage="Combo_nor_purchase.png" dropboxsize="160,300">
+				<ListLabelElement text="2400" />
+                <ListLabelElement text="3600" />
+				<ListLabelElement text="4800" />
+				<ListLabelElement text="9600"  selected="true"/>
+				<ListLabelElement text="19200" />
+				</Combo>
+			</HorizontalLayout>
+			<HorizontalLayout  height="30" >
+				<Label text="设备类型：" align="right" font="1"/>
+				<Combo name="type" width="160" endellipsis="true" bordersize="1"  bordercolor="#FFB5B5B5"  itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" normalimage="Combo_nor_purchase.png" hotimage="Combo_nor_purchase.png" pushedimage="Combo_nor_purchase.png" dropboxsize="160,300">
+				<ListLabelElement text="微型设备" selected="true" />
+                <ListLabelElement text="小型设备"  />
+				<ListLabelElement text="中型设备" />
+				<ListLabelElement text="大型设备" />
+                </Combo>
+			</HorizontalLayout>
+			<HorizontalLayout  height="30" >
+				<Label text="X轴报警值(mm/s)：" align="right" font="1"/>
+				<Edit name="XWarning"  width="160" height="30" align="left" bkcolor="#FFFFFFFF" bordercolor="#FF666666" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
+			</HorizontalLayout>
+			<HorizontalLayout  height="30" >
+				<Label text="Z轴报警值(mm/s)：" align="right" font="1" />
+				<Edit name="ZWarning"  width="160" height="30" align="left" bkcolor="#FFFFFFFF" bordercolor="#FF666666" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
+			</HorizontalLayout>
+			<HorizontalLayout  height="30" >
+				<Label text="报警值温度(℃)：" align="right" font="1" />
+				<Edit name="TWarning"  width="160" height="30" align="left" bkcolor="#FFFFFFFF" bordercolor="#FF666666" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
+			</HorizontalLayout>
+			<HorizontalLayout  height="30" >
+				<Label text="名称：" align="right" font="1"/>
+				<Edit name="name"  width="160" height="30" align="left" bkcolor="#FFFFFFFF" bordercolor="#FF666666" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
+			</HorizontalLayout>
+			
+			<Control height="30" />
+			<HorizontalLayout  height="30" >
+			 <Control width="80"/>	
+			 <Button name="cancel" text="取消" font="1" width="80" bkcolor="#FF5B9BD5"/>
+			 <Control width="80"/>	
+			 <Button name="enter" text="确认" font="1" width="80" bkcolor="#FF5B9BD5"/>
+			</HorizontalLayout>
+		</VerticalLayout>	
+		 
+		<Control />		
+      </HorizontalLayout>
+	 
+  </VerticalLayout>
+</Window>
+
+ 

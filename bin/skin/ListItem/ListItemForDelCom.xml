@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Window>  
+	<ListContainerElement height="22">
+		<!--一下是一个例子详见 source="./skin/ListItem/ListItemForDelEmp.xml"-->
+		<HorizontalLayout>
+			<Label name="name" text="COM1"  width="90" align="center"/>
+			<Label name="mark" text="COM1"   align="center"/>
+			<HorizontalLayout   width="90">
+				<Control />
+				<CheckBox name="checkbox" width="25" normalimage=" file='images\uncheck.png' dest='5,4,20,19'" selectedimage=" file='images\check.png' dest='5,4,20,19'" />
+				<Control />
+			</HorizontalLayout>					
+		</HorizontalLayout>
+	</ListContainerElement>
+</Window>

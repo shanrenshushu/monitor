@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window size="350,200" >
+<Include source="scrollbar.xml" />	
+<Font id="0" name="微软雅黑" size="16" bold="false" />
+<Font id="1" name="微软雅黑" size="14" bold="false" />
+<VerticalLayout bkcolor="0xFFf0f0f0">
+	<HorizontalLayout height="50" bkcolor="0xFF009BDB" > <!--系统按钮-->  
+		<Control width="10"/>
+		<Label width="32" height="32" bkimage=" file='images\SubMenuImg\version.png' " padding="0,9"/>
+		<Label width="150" text="版本信息" bkimage=" file='images\codeblocks.png' dest='4,3,20,19'" textpadding="10,0,0,0" font="0" textcolor="0xFFFFFFFF"/>
+		<Control />
+	</HorizontalLayout>
+
+	<VerticalLayout>
+		<Control />
+		<VerticalLayout height="90">
+			<Label text="版本号：2018.04.05.A" font="1" padding="50" textcolor="0xFF505050"/>
+			<Label text="XXXXXXXX 版权所有"  font="1" padding="50" textcolor="0xFF505050"/>
+			<Label text="官网：www.XXXXXX.COM"               font="1" padding="50" textcolor="0xFF505050"/>
+		</VerticalLayout>
+		<Control />
+		<HorizontalLayout height="40">
+			<Control />
+			<Button name="btn_help_ok" width="80" height="22" text="确  定" bkcolor="0xFFEF5B5C" borderround="3,3" textcolor="0xFFFFFFFF"/>
+			<Control width="30" />
+		</HorizontalLayout>
+	</VerticalLayout>
+</VerticalLayout>
+</Window>

@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{3F00776C-7ED1-4086-BEAA-8A106C86132A}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\Plot.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Plot.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>..\lib\$(TargetName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\Plot.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Plot.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>..\lib\$(TargetName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Plot\Basics\Axis.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\AxisImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\Global.cpp" />
+    <ClCompile Include="Plot\Extended\BendingPlot\BendingPlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\BendingPlot\BendingPlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\cellrange.cpp" />
+    <ClCompile Include="Plot\Chart.cpp" />
+    <ClCompile Include="Plot\Basics\DefHandlers\ColorControl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ContourLinePlot\Contour.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ContourLinePlot\ContourLinePlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ContourLinePlot\ContourLInePlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\DblBufferPlot\DblBufferPlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\DefHandlers\DefAxisSettingDialogs.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\DefHandlers\DefContextMenu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\DefHandlers\DefDataSettingDialogs.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\DefHandlers\DefHandlers.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\DefHandlers\DefPlotSettingDialogs.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\g_cellseries.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\g_checkbox.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\g_editbox.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\grid.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\grid_lib.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\gridcell.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\GridPlot.cpp" />
+    <ClCompile Include="Plot\Extended\ImagePlot\ImageLegend.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ImagePlot\ImageLegendImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ImagePlot\ImagePlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ImagePlot\ImagePlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\LayeredPlot\LayeredPlot.cpp" />
+    <ClCompile Include="Plot\Extended\LayeredPlot\LayeredPlotImpl.cpp" />
+    <ClCompile Include="Plot\Basics\Legend.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\LegendImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ContourLinePlot\ListContour.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\memdc.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\mergecell.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\mergecella.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\mergecellb.cpp" />
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\mergemanager.cpp" />
+    <ClCompile Include="Plot\Accessary\MyString\MyString.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Accessary\Numerical\NlFit\NlFit.cpp" />
+    <ClCompile Include="Plot\Accessary\Numerical\NlFit\NlFitFuction.cpp" />
+    <ClCompile Include="Plot\Extended\ObjectPlot\ObjectPlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\ObjectPlot\ObjectPlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Accessary\Numerical\Optimize\Optimize.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\OscilloPlot\OscilloPlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\OscilloPlot\OscilloPlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\PiePlot\PiePlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\PiePlot\PiePlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\Plot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\PlotControl\PlotControl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\PlotData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\GridPlot\PlotGrid.cpp" />
+    <ClCompile Include="Plot\Basics\PlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\LayeredPlot\PlotLayer.cpp" />
+    <ClCompile Include="Plot\Extended\LayeredPlot\PlotLayerImpl.cpp" />
+    <ClCompile Include="Plot\Basics\PlotUtility.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\PlotWnd\PlotWnd.cpp" />
+    <ClCompile Include="Plot\Extended\RealtimePlot\RealtimeDemo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\RealtimePlot\RealtimeDemoImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\RealtimePlot\RealtimePlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\RealtimePlot\RealtimePlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\rectrgn.cpp" />
+    <ClCompile Include="Plot\Extended\ShareXPlot\ShareXLayer.cpp" />
+    <ClCompile Include="Plot\Extended\ShareXPlot\ShareXLayerImpl.cpp" />
+    <ClCompile Include="Plot\Extended\ShareXPlot\ShareXLegend.cpp" />
+    <ClCompile Include="Plot\Extended\ShareXPlot\ShareXLegendImpl.cpp" />
+    <ClCompile Include="Plot\Extended\ShareXPlot\ShareXPlot.cpp" />
+    <ClCompile Include="Plot\Extended\ShareXPlot\ShareXPlotImpl.cpp" />
+    <ClCompile Include="Plot\Extended\SplinePlot\Spline.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\SplinePlot\SplinePlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\SplinePlot\SplinePlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\StemPlot\StemPlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\StemPlot\StemPlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Extended\GridPlot\grid_lib\variant.cpp" />
+    <ClCompile Include="Plot\Basics\XYPlot.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Plot\Basics\XYPlotImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Plot\Basics\Global.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\array.h" />
+    <ClInclude Include="Plot\Basics\Axis.h" />
+    <ClInclude Include="Plot\Basics\AxisImpl.h" />
+    <ClInclude Include="Plot\Extended\BendingPlot\BendingPlot.h" />
+    <ClInclude Include="Plot\Extended\BendingPlot\BendingPlotImpl.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\cellrange.h" />
+    <ClInclude Include="Plot\Chart.h" />
+    <ClInclude Include="Plot\Basics\DefHandlers\ColorControl.h" />
+    <ClInclude Include="Plot\Basics\ColorTable.h" />
+    <ClInclude Include="Plot\Extended\ContourLinePlot\Contour.h" />
+    <ClInclude Include="Plot\Extended\ContourLinePlot\ContourLinePlot.h" />
+    <ClInclude Include="Plot\Extended\ContourLinePlot\ContourLinePlotImpl.h" />
+    <ClInclude Include="Plot\Extended\DblBufferPlot\DblBufferPlot.h" />
+    <ClInclude Include="Plot\Extended\DblBufferPlot\DblBufferPlotImpl.h" />
+    <ClInclude Include="Plot\Basics\DefHandlers\DefHandlers.h" />
+    <ClInclude Include="Plot\Basics\ErrorCode.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\g_cellseries.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\g_checkbox.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\g_editbox.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\grid.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\grid_lib.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\gridcell.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\GridPlot.h" />
+    <ClInclude Include="Plot\Extended\ImagePlot\ImageLegend.h" />
+    <ClInclude Include="Plot\Extended\ImagePlot\ImageLegendImpl.h" />
+    <ClInclude Include="Plot\Extended\ImagePlot\ImagePlot.h" />
+    <ClInclude Include="Plot\Extended\ImagePlot\ImagePlotImpl.h" />
+    <ClInclude Include="Plot\Extended\LayeredPlot\LayeredPlot.h" />
+    <ClInclude Include="Plot\Extended\LayeredPlot\LayeredPlotImpl.h" />
+    <ClInclude Include="Plot\Basics\Legend.h" />
+    <ClInclude Include="Plot\Basics\LegendImpl.h" />
+    <ClInclude Include="Plot\Extended\ContourLinePlot\ListContour.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\matrix.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\memdc.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\mergecell.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\mergecella.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\mergecellb.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\mergemanager.h" />
+    <ClInclude Include="Plot\Accessary\MyString\MyString.h" />
+    <ClInclude Include="Plot\Accessary\Numerical\NlFit\NlFit.h" />
+    <ClInclude Include="Plot\Extended\ObjectPlot\ObjectPlot.h" />
+    <ClInclude Include="Plot\Extended\ObjectPlot\ObjectPlotImpl.h" />
+    <ClInclude Include="Plot\Accessary\Numerical\Optimize\Optimize.h" />
+    <ClInclude Include="Plot\Extended\OscilloPlot\OscilloPlot.h" />
+    <ClInclude Include="Plot\Extended\OscilloPlot\OscilloPlotImpl.h" />
+    <ClInclude Include="Plot\Extended\PiePlot\PiePlot.h" />
+    <ClInclude Include="Plot\Extended\PiePlot\PiePlotImpl.h" />
+    <ClInclude Include="Plot\Basics\Plot.h" />
+    <ClInclude Include="Plot\Extended\PlotControl\PlotControl.h" />
+    <ClInclude Include="Plot\Basics\PlotData.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\PlotGrid.h" />
+    <ClInclude Include="Plot\PlotHeaders.h" />
+    <ClInclude Include="Plot\Basics\PlotImpl.h" />
+    <ClInclude Include="Plot\PlotInterface.h" />
+    <ClInclude Include="Plot\Extended\LayeredPlot\PlotLayer.h" />
+    <ClInclude Include="Plot\Extended\LayeredPlot\PlotLayerImpl.h" />
+    <ClInclude Include="Plot\PlotRedefinitions.h" />
+    <ClInclude Include="Plot\Basics\PlotUtility.h" />
+    <ClInclude Include="Plot\Extended\PlotWnd\PlotWnd.h" />
+    <ClInclude Include="Plot\Extended\RealtimePlot\RealtimeDemo.h" />
+    <ClInclude Include="Plot\Extended\RealtimePlot\RealtimeDemoImpl.h" />
+    <ClInclude Include="Plot\Extended\RealtimePlot\RealtimePlot.h" />
+    <ClInclude Include="Plot\Extended\RealtimePlot\RealtimePlotImpl.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\rectrgn.h" />
+    <ClInclude Include="Plot\Extended\ShareXPlot\ShareXLayer.h" />
+    <ClInclude Include="Plot\Extended\ShareXPlot\ShareXLayerImpl.h" />
+    <ClInclude Include="Plot\Extended\ShareXPlot\ShareXLegend.h" />
+    <ClInclude Include="Plot\Extended\ShareXPlot\ShareXLegendImpl.h" />
+    <ClInclude Include="Plot\Extended\ShareXPlot\ShareXPlot.h" />
+    <ClInclude Include="Plot\Extended\ShareXPlot\ShareXPlotImpl.h" />
+    <ClInclude Include="Plot\Extended\SplinePlot\Spline.h" />
+    <ClInclude Include="Plot\Extended\SplinePlot\SplinePlot.h" />
+    <ClInclude Include="Plot\Extended\SplinePlot\SplinePlotImpl.h" />
+    <ClInclude Include="Plot\Extended\SplitPlot\SplitPlot.h" />
+    <ClInclude Include="Plot\Extended\SplitPlot\SplitPlotImpl.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Plot\Extended\StemPlot\StemPlot.h" />
+    <ClInclude Include="Plot\Extended\StemPlot\StemPlotImpl.h" />
+    <ClInclude Include="Plot\Extended\GridPlot\grid_lib\variant.h" />
+    <ClInclude Include="Plot\Basics\XYHandler.h" />
+    <ClInclude Include="Plot\Basics\XYPlot.h" />
+    <ClInclude Include="Plot\Basics\XYPlotImpl.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

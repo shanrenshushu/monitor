@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window>
+    <ListContainerElement height="32" focusbordercolor="#FF0000FF" >
+		<HorizontalLayout name=""  tooltip="" float="false"  childpadding="0" inset="1,1,1,1">
+			<Label name="light"  bkimage="file='.\skin\green.png' dest='6,5,28,27'" width="22" height="22" padding="5,5" showhtml="true"></Label>
+			<Control width="10" />
+			<Label name="name"  text="设备aaaa" font="11" ></Label>
+		</HorizontalLayout>
+	</ListContainerElement>
+</Window>

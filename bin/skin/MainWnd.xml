@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1400,820" sizebox="4,4,4,4" caption="0,0,0,50"  >
+<Font id="0" name="幼圆" size="28" bold="false" color="0xFFFFFFFF"/>
+<Font id="1" name="幼圆" size="14" bold="false" color="0xFFFFFFFF"/> <!--选择设备list中的设备的名称-->
+<Font id="2" name="幼圆" size="25" bold="true"  color="0xFFFFFFFF"/> <!--logo旁边的公司名称-->
+<Font id="3" name="幼圆" size="14" bold="true"  color="0xFFFFFFFF"/> <!--退出-->
+<Include source="default.xml" />
+<Include source="scrollbar.xml" />
+
+<VerticalLayout width="630" height="429" bkcolor="0xFFFFFFFF" bordersize="1" bordercolor="0xFF64aeed" inset="1,1,1,1" >
+	<HorizontalLayout bkcolor="0xFFc0c0c0" height="70" align="center" menu="true">
+		<HorizontalLayout width="250" bkimage="file='images/logo/logo.png' dest='20,10,75,65' ">
+			<Control />
+			<Label text="远盟自动化" width="180" align="center" font="2" textcolor="0x80FFFFFF"/>
+		</HorizontalLayout>
+
+		<HorizontalLayout height="48" padding="0,11" width="800">
+			<Control width="40"/>
+
+			<Button name="btn_change_device" width="48" height="48" tooltip="修改设备" bkimage="images/MenuImg/device_change.png" bordersize="0" bordercolor="0xFFFFFFFF"/>  			
+			<Control width="10"/>
+			<Button name="btn_add_device"    width="48" height="48" tooltip="添加设备" bkimage="images/MenuImg/device_add.png"    bordersize="0" bordercolor="0xFFFFFFFF"/>  
+			<Control width="10"/>
+			<Button name="btn_del_device"    width="48" height="48" tooltip="删除设备" bkimage="images/MenuImg/device_del.png"    bordersize="0" bordercolor="0xFFFFFFFF"/>  			
+
+			<Control width="30"/>
+
+			<Button name="btn_sel_emp" width="48" height="48" tooltip="选择人员" bkimage="images/MenuImg/employee_select.png" bordersize="0" bordercolor="0xFFFFFFFF"/>  <!--选择人员-->
+			<Control width="10"/>
+			<Button name="btn_del_emp" width="48" height="48" tooltip="删除人员" bkimage="images/MenuImg/employee_delete.png" bordersize="0" bordercolor="0xFFFFFFFF"/>  <!--删除人员-->
+			<Control width="10"/>
+			<Button name="btn_add_emp" width="48" height="48" tooltip="添加人员" bkimage="images/MenuImg/employee_add.png"    bordersize="0" bordercolor="0xFFFFFFFF"/>  <!--添加人员-->
+		
+			<Control width="30"/>
+
+			<!--Button name="btn_sel_com"    width="48" height="48" tooltip="修改COM" bkimage="images/MenuImg/com_change.png"    bordersize="0" bordercolor="0xFFFFFFFF"/>
+			<Control width="10"/-->
+			<Button name="btn_add_com"       width="48" height="48" tooltip="添加COM" bkimage="images/MenuImg/com_add.png"    bordersize="0" bordercolor="0xFFFFFFFF"/>
+			<Control width="10"/>
+			<Button name="btn_delete_com"    width="48" height="48" tooltip="删除COM" bkimage="images/MenuImg/com_delete.png"    bordersize="0" bordercolor="0xFFFFFFFF"/>
+
+			<Control width="30"/>
+
+			<Button name="btn_detail"    width="48" height="48" tooltip="明细查询" bkimage="images/MenuImg/stock_ticker.png"    bordersize="0" bordercolor="0xFFFFFFFF"/>
+			
+			<Control width="30"/>
+
+			<Button width="48" height="48" tooltip="导出EXCEL" bkimage="images/MenuImg/gnumeric.png"/>
+		</HorizontalLayout>
+
+		<Control />
+		<Button width="55" height="22" bordersize="0" bordercolor="0xFF00FF00" text="   帮助" name="btn_help" tooltip="帮助"  bkimage="file='images/sysbtn/help.png' dest='0,0,22,22' " padding="0,5" textcolor="0xFFFFFFFF" font="3"/>  <!--退出程序-->
+		<Control width="15" />
+		<Button width="55" height="22" bordersize="0" bordercolor="0xFF00FF00" text="   退出" name="closebtn" tooltip="退出"  bkimage="file='images/sysbtn/exit.png' dest='0,0,22,22' " padding="0,5" textcolor="0xFFFFFFFF" font="3"/>  <!--退出程序-->
+		<Control width="5"/>
+	</HorizontalLayout>
+
+	
+	<HorizontalLayout>
+		<HorizontalLayout bkcolor="0xFFe0e0e0" width="150">
+			<!--选择设备-->
+			<List name="ListView" text="" childpadding="1" vscrollbar="true" hscrollbar="true" tooltip="" float="false" itemselectedbkcolor="#FF96CDCD" itemhotbkcolor="#FFBBFFFF" header="hidden" inset="2,1,2,2" bkimage="file='downlist_bk.png' ytiled='true'">
+			</List>
+		</HorizontalLayout>
+
+		
+		<!--曲线区域-->
+		<TabLayout name="client">
+		  <!--实时曲线-->
+		  <VerticalLayout >
+			<Wnd name="wnd1" float="false" bkcolor="#FF000000" />
+			<Wnd name="wnd2" float="false" bkcolor="#FF000000"/>
+			<Wnd name="wnd3" float="false" bkcolor="#FF000000"/>
+		  </VerticalLayout>
+		  <!--历史曲线-->
+		  <VerticalLayout >
+			<Control height="5"/>
+			<HorizontalLayout height="20" name="timecontainer">
+				<Control />
+				<Label text="选择时间" width="60" align="center"/>
+				<Control width="10"/>
+				<DateTime name="starttime" width="110"  height="20" align="center" bordersize="1" bordercolor="0xFF9CD6FF"/>
+				<Label text="~" width="20" align="center"/>
+				<DateTime name="endtime"   width="110"  height="20" align="center" bordersize="1" bordercolor="0xFF9CD6FF"/>
+				<Control width="10"/>
+				<Button name="CompareX" text="对比X轴"   width="80" bkcolor="0xFFEF3B3C" textcolor="0xFFFFFFFF" pushedtextcolor="0xFFFFFFFF" hottextcolor="0xFF000000" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF"/>
+				<Control width="10"/>
+				<Button name="CompareZ" text="对比Y轴"   width="80" bkcolor="0xFFEF3B3C" textcolor="0xFFFFFFFF" pushedtextcolor="0xFFFFFFFF" hottextcolor="0xFF000000" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF"/>
+				<Control width="10"/>
+				<Button name="CompareT" text="对比温度"  width="80" bkcolor="0xFFEF3B3C" textcolor="0xFFFFFFFF" pushedtextcolor="0xFFFFFFFF" hottextcolor="0xFF000000" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF"/>
+				<Control />
+				<Button name="Return" text="  返回" font="13" width="60" height="22" textcolor="0xFF505050" pushedtextcolor="0xFFFFFFFF" hottextcolor="0xFF000000" borderround="3,3" bordersize="0" bordercolor="0xFF9CD6FF" bkimage=" file='images/sysbtn/goback.png' dest='0,0,22,22' "/>
+			</HorizontalLayout>
+			<Wnd name="wnd4" float="false" bkcolor="#FF000000" />
+			<Wnd name="wnd5" float="false" bkcolor="#FF000000"/>
+	
+		  </VerticalLayout>
+
+		</TabLayout>
+	</HorizontalLayout>
+
+</VerticalLayout>
+</Window>

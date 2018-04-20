@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Window size="510,300" minifo="256,649" caption="0,0,0,32" sizebox="4,4,4,4" bkcolor="0xFFFFFFFF">
+	<Font name="黑体" size="15" italic="false" />
+	<Font name="宋体" size="12" />
+	<VerticalLayout bkcolor="0xFFFFFFFF">
+		<Label name="label_warning" font="0" float="true" pos="150,30,350,60" textcolor="#FFFF0000" bkcolor="0xFFFFFFFF" />
+	
+		<HorizontalLayout float="true" pos="15,60,495,90" bkcolor="#FFEFEFF2" >
+			<Label font="0" float="true" pos="10,5,80,25"   align="center" bordersize="0" bordercolor="#FF123456" text="产线名称"/>
+			<Label font="0" float="true" pos="100,5,170,25" align="center" bordersize="0" bordercolor="#FF123456" text="计划产量"/>
+			<Label font="0" float="true" pos="190,5,260,25" align="center" bordersize="0" bordercolor="#FF123456" text="目标产量"/>
+			<Label font="0" float="true" pos="280,5,350,25" align="center" bordersize="0" bordercolor="#FF123456" text="实际产量"/>
+			<Label font="0" float="true" pos="370,5,410,25" align="center" bordersize="0" bordercolor="#FF123456" text="差-值"/>
+		</HorizontalLayout>
+
+		<HorizontalLayout float="true" pos="15,90,495,120" bkcolor="#F8E8EF82" bkcolor="0xFFFFFFFF">
+			<Label font="0" float="true" pos="10,5,80,25"   align="center" bordersize="0" bordercolor="#FF123456" text="1号看板"/>
+			<Label name="label_line1plan" font="0" float="true" pos="100,5,170,25" align="center" bordersize="0" bordercolor="#FF123456" text="1000"/>
+			<Edit  name="edit_line1plan" float="true" pos="110,5,160,25" visible="false"/>
+			<Label name="label_line1target" font="0" float="true" pos="190,5,260,25" align="center" bordersize="0" bordercolor="#FF123456" text="500"/>
+			<Label name="label_line1actual" font="0" float="true" pos="280,5,350,25" align="center" bordersize="0" bordercolor="#FF123456" text="125"/>
+			<Edit  name="edit_line1act"  float="true" pos="290,5,340,25" visible="false"/>
+			<Label name="label_line1dvalue" font="0" float="true" pos="370,5,410,25" align="center" bordersize="0" bordercolor="#FF123456" text="-214"/>
+			<Button name="btn_line1" float="true" pos="425,5,475,25" font="1" textcolor="FFFFFFFF" text="修 改" hotimage="./images/btn_norchange.png" normalimage="./images/btn_hotchange.png"/>
+		</HorizontalLayout>
+
+		<HorizontalLayout float="true" pos="15,120,495,150" bkcolor="#FFAFAFA2" bkcolor="0xFFFFFFFF">
+			<Label font="0" float="true" pos="10,5,80,25"   align="center" bordersize="0" bordercolor="#FF123456" text="2号看板"/>
+			<Label name="label_line2plan" font="0" float="true" pos="100,5,170,25" align="center" bordersize="0" bordercolor="#FF123456" text="1000"/>
+			<Edit  name="edit_line2plan" float="true" pos="110,5,160,25" visible="false"/>
+			<Label name="label_line2target" font="0" float="true" pos="190,5,260,25" align="center" bordersize="0" bordercolor="#FF123456" text="500"/>
+			<Label name="label_line2actual" font="0" float="true" pos="280,5,350,25" align="center" bordersize="0" bordercolor="#FF123456" text="125"/>
+			<Edit  name="edit_line2act"  float="true" pos="290,5,340,25" visible="false"/>
+			<Label name="label_line2dvalue" font="0" float="true" pos="370,5,410,25" align="center" bordersize="0" bordercolor="#FF123456" text="-214"/>
+			<Button name="btn_line2" float="true" pos="425,5,475,25" font="1" textcolor="FFFFFFFF" text="修 改" hotimage="./images/btn_norchange.png" normalimage="./images/btn_hotchange.png"/>
+		</HorizontalLayout>
+
+	</VerticalLayout>
+</Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
