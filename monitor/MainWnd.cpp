@@ -557,6 +557,8 @@ void MainWnd::RefreshChartUI( vector<sRecordInfo*>& infoArr )
 			chart->SetBkgndColor(TO_RGB(mpUI1->GetBkColor()));
 			chart->SetUseMajorHGrids(true);
 			chart->SetMajorGridLineStyle(PS_DOT);
+			((XYChartID*)chart)->SetAutoDataColor(false);
+			((XYChartID*)chart)->SetDataColor(0,TO_RGB(0xffffffff));
 			///x坐标轴相关
 			CAxis* AxisBottom=chart->AddAxis(kLocationBottom);
 			//AxisBottom->SetTitle(_TEXT("时间"));
@@ -586,6 +588,7 @@ void MainWnd::RefreshChartUI( vector<sRecordInfo*>& infoArr )
 			
 			AxisBottom->SetMinorTickCount(X_SMALL_TICK_NUM);
 			AxisBottom->SetTickCount(X_BIG_TICK_NUM);
+			AxisBottom->SetAxisColor(TO_RGB(0xffffffff));
 
 			///y坐标轴相关
 			CAxis* AxisLeft=chart->AddAxis(kLocationLeft);
