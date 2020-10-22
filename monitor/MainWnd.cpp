@@ -19,7 +19,7 @@
 #include "DlgForChangeDevice.h"
 #include "DlgForHelp.h"
 
-
+#include "shadow.h"
 
 
 #include  <mmsystem.h>
@@ -118,7 +118,16 @@ void MainWnd::Notify(TNotifyUI& msg){
 
 void MainWnd::InitWindow(){
 	//SendMessage(WM_SYSCOMMAND, SC_MAXIMIZE, 0);
-	::ShowWindow(this->GetHWND(),SW_MAXIMIZE);
+	//::ShowWindow(this->GetHWND(),SW_MAXIMIZE);
+
+	/*LONG styleValue = ::GetWindowLong(*this, GWL_STYLE);
+	styleValue &= ~WS_CAPTION;
+	::SetWindowLong(*this, GWL_STYLE, styleValue | WS_CLIPSIBLINGS | WS_CLIPCHILDREN |WS_VISIBLE);
+	this->CenterWindow();
+	this->ShowWindow();*/
+
+	m_WndShadow.Create(m_hWnd);
+	return;
 
 	MAN->SetMainWnd(GetHWND());
 	GetControlByName(CTabLayoutUI,mpClientTabLayout,L"client");

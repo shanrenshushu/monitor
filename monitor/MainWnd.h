@@ -11,7 +11,7 @@
 #include "Control.h"
 #include "ChartUI.h"
 using namespace DuiLib;
-
+#include "shadow.h"
 
 enum eAxis
 {
@@ -20,6 +20,7 @@ enum eAxis
 	TAxis=3
 };
 
+class CWndShadow;
 class MainWnd:  public WindowImplBase
 {
 public:
@@ -42,7 +43,7 @@ public:
 	void AddDevice(const sDeviceInfo &info);
 	void DelDevice(const sDeviceInfo &info);
 private:
-	
+	CWndShadow m_WndShadow;
 	CButtonUI* m_pBtnAddDevice;
 	CButtonUI* m_pBtnDelDevice;
 	CButtonUI* m_pBtnChangeDevice;

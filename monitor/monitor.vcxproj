@@ -51,7 +51,8 @@
     <LinkIncremental>false</LinkIncremental>
     <TargetName>monitor</TargetName>
     <OutDir>..\bin\</OutDir>
-    <IncludePath>C:\Program Files (x86)\MySQL\MySQL Server 5.1\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Boost\include\boost-1_57;C:\Program Files (x86)\MySQL\MySQL Server 5.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Boost\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -122,6 +123,7 @@
     <ClInclude Include="SerialComm.h" />
     <ClInclude Include="SerialDeviceAdmin.h" />
     <ClInclude Include="Setting.h" />
+    <ClInclude Include="shadow.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -150,6 +152,7 @@
     <ClCompile Include="SerialComm.cpp" />
     <ClCompile Include="SerialDeviceAdmin.cpp" />
     <ClCompile Include="Setting.cpp" />
+    <ClCompile Include="shadow.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

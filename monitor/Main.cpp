@@ -1,4 +1,4 @@
-//                            _ooOoo_  
+ï»¿//                            _ooOoo_  
 //                           o8888888o  
 //                           88" . "88  
 //                           (| -_- |)  
@@ -17,14 +17,14 @@
 //         ======`-.____`-.___\_____/___.-`____.-'======  
 //                            `=---='   
 //         .............................................  
-//                  ·ğ×æ±£ÓÓ             ÓÀÎŞBUG 
+//                  ä½›ç¥–ä¿ä½‘             æ°¸æ— BUG 
 //			............................................
 #include "stdafx.h"
 //#include "YZGMainFrame.h"
 #include "MainWnd.h"
 #include "Manager.h"
 #include "GsmModel.h"
-
+#pragma comment (lib, "Msimg32")
 GsmModel              g_GsmModel;
 
 HANDLE mMutexHandle = NULL;
@@ -62,18 +62,71 @@ void SetIcon(HWND hWnd)
 	
 }
 
- 
+#pragma comment (lib, "Msimg32")
+int Testmain()
+{
+	HDC lWndDC= GetWindowDC(NULL);
+	RECT  lrtRect;
+	lrtRect.left = 0;
+	lrtRect.top = 0;
+	lrtRect.right = 500;
+	lrtRect.bottom = 500;
+	COLORREF col_from = RGB(255, 0,0);
+	COLORREF col_to = RGB(0, 255,0);
+	COLORREF col_a = RGB(0, 0,255);
+
+	BOOL vert_grad=true;
+	TRIVERTEX        vert[3];
+	GRADIENT_RECT    mesh;
+	mesh.UpperLeft  = 0;
+	mesh.LowerRight = 1;
+	/*_GRADIENT_TRIANGLE mesh;
+	mesh.Vertex1  = 0;
+	mesh.Vertex2 = 1;
+	mesh.Vertex3 = 2;*/
+	vert[0].x      = lrtRect.left;
+	vert[0].y      = lrtRect.top;
+	vert[0].Alpha  = 0x0000;
+	vert[0].Blue   = GetBValue(col_from)<<8;
+	vert[0].Green  = GetGValue(col_from)<<8;
+	vert[0].Red    = GetRValue(col_from)<<8;
+	vert[1].x      = lrtRect.right;
+	vert[1].y      = lrtRect.bottom; 
+	vert[1].Alpha  = 0x0000;
+	vert[1].Blue   = GetBValue(col_to) <<8;
+	vert[1].Green  = GetGValue(col_to) <<8;
+	vert[1].Red    = GetRValue(col_to) <<8;
+
+	vert[2].x      = lrtRect.left;
+	vert[2].y      = lrtRect.bottom; 
+	vert[2].Alpha  = 0x0000;
+	vert[2].Blue   = GetBValue(col_a) <<8;
+	vert[2].Green  = GetGValue(col_a) <<8;
+	vert[2].Red    = GetRValue(col_a) <<8;
+	
+
+	GradientFill( lWndDC, vert, 2, &mesh, 1, GRADIENT_FILL_RECT_H);
+
+	DeleteDC(lWndDC);
+
+	Sleep(2000);
+
+	return 0;
+}
+
+#include "shadow.h"
 int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPTSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
+	return Testmain();
 	//if (!CheckSingleApplication())
 	//{
-	//	LogInfo(L"ÊµÀıÒÑ¾­ÔËĞĞ");
+	//	LogInfo(L"å®ä¾‹å·²ç»è¿è¡Œ");
 	//	return 0;
 	//}
-	LogInfo(L"Æô¶¯");
+	LogInfo(L"å¯åŠ¨");
 
 	//ApiHelper::InitSQLiteDB();
 
@@ -93,10 +146,10 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	SetInfo.deviceID = 3;
 	SetInfo.createTime = Utf2U(GetCurTime());
 	SetInfo.createTimeNum = time(0);
-	SetInfo.name=L"¿´µÃ¼û·¨ÀíµÄ";
+	SetInfo.name=L"çœ‹å¾—è§æ³•ç†çš„";
 	SetInfo.com=L"com2";
 	SetInfo.baud=4800;
-	SetInfo.type=L"Ğ¡ĞÍÉè±¸";
+	SetInfo.type=L"å°å‹è®¾å¤‡";
 	SetInfo.XWarning=1.02;
 	SetInfo.ZWarning=0.25;
 	SetInfo.TWarning = 12.12;*/
@@ -111,7 +164,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	
 
 	//Gsm
-	//g_GsmModel.StartGsm( 99/*´®¿ÚºÅ*/ );  
+	//g_GsmModel.StartGsm( 99/*ä¸²å£å·*/ );  
 	//g_GsmModel.InsertOneMsg( Tool::WStringToString(vecAllPhone[i]),Tool::WStringToString(wstrAlarmInfo) );
 
 #if 0
@@ -128,21 +181,22 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	::UpdateWindow(hwnd);
 #else	
 
+	CWndShadow::Initialize(hInstance);
 	MainWnd * mainwnd= new MainWnd();
-	mainwnd->Create(NULL, _T("Õñ¶¯¼ì²âÏµÍ³"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+	mainwnd->Create(NULL, _T("æŒ¯åŠ¨æ£€æµ‹ç³»ç»Ÿ"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 	mainwnd->CenterWindow();
 	mainwnd->ShowWindow();
 #endif	
 	CPaintManagerUI::MessageLoop();
-	LogInfo(L"MessageLoopÍË³ö£¡");
+	LogInfo(L"MessageLoopé€€å‡ºï¼");
 
 
 
-	///ÒÔÏÂÊÇÍË³öÇåÀí¹¤×÷
+	///ä»¥ä¸‹æ˜¯é€€å‡ºæ¸…ç†å·¥ä½œ
 	Manager::ReleaseInstance();
 	ReleaseMutex(mMutexHandle);
 	//ApiHelper::ExitSQLiteDB();
 	::OleUninitialize();
-	LogInfo(L"===============ÍË³ö================\n");
+	LogInfo(L"===============é€€å‡º================\n");
 	return 1;
 }

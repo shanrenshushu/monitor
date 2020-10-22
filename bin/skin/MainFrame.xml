@@ -30,7 +30,7 @@
 		  <Control width="10" />
 		  <VerticalLayout  width="250" >
 		   <Control height="12" />
-		   <Label name="title" text="实时监控系统" font="22"  height="32" />
+		   <Label name="title" text="实时监控系统" bkimage="ho48.gif" font="22"  height="32" />
 		  </VerticalLayout>
 		  <Button name="return" font="1" text="主页" textpadding="0,40,0,0" textcolor="0xFFFFFFFF" hottextcolor="0xFFFF0000" height="60" width="48" hotbkcolor="0xFF5DC1FC" selectedbkcolor="#FF5DC1FC" normalimage=" file='sys_mainframe.png' dest='0,0,64,48'" hotimage=" file='sys_mainframe.png' dest='0,0,64,48'" pushedimage=" file='sys_mainframe.png' dest='0,0,64,48'" selectedimage=" file='sys_mainframe.png' dest='0,0,64,48'"/>
 		  <Control width="30" />

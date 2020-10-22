@@ -8,10 +8,11 @@
 <Include source="scrollbar.xml" />
 
 <VerticalLayout width="630" height="429" bkcolor="0xFFFFFFFF" bordersize="1" bordercolor="0xFF64aeed" inset="1,1,1,1" >
+	
 	<HorizontalLayout bkcolor="0xFFc0c0c0" height="70" align="center" menu="true">
 		<HorizontalLayout width="250" bkimage="file='images/logo/logo.png' dest='20,10,75,65' ">
 			<Control />
-			<Label text="远盟自动化" width="180" align="center" font="2" textcolor="0x80FFFFFF"/>
+			<Label text="远盟自动化" width="180" align="center"  font="2" textcolor="0x80FFFFFF"/>
 		</HorizontalLayout>
 
 		<HorizontalLayout height="48" padding="0,11" width="800">
