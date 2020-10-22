@@ -27,6 +27,7 @@
 #pragma comment (lib, "Msimg32")
 GsmModel              g_GsmModel;
 
+
 HANDLE mMutexHandle = NULL;
 bool CheckSingleApplication()
 {
